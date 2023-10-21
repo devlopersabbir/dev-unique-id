@@ -1,12 +1,30 @@
 {
   "name": "dev-unique-id",
   "version": "1.0.0",
-  "description": "",
+  "description": "Dev Unique ID Generator",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "bugs": {
+    "email": "devlopersabbir@gmail.com",
+    "url": "https://github.com/devlopersabbir/dev-unique-id/issues/new"
   },
-  "keywords": [],
-  "author": "",
+  "categories": [
+    "Education",
+    "Other"
+  ],
+  "homepage": "https://devlopersabbir.github.io/dev-unique-id",
+  "markdown": "standard",
+  "keywords": [
+    "dev-unique-id",
+    "uuid",
+    "unique-id",
+    "id-generator",
+    "unique-id-generator",
+    "dev-unique"
+  ],
+  "author": {
+    "email": "devlopersabbir@gmail.com",
+    "name": "Sabbir Hossain Shuvo",
+    "url": "https://devlopersabbir.github.io"
+  },
   "license": "ISC"
 }
