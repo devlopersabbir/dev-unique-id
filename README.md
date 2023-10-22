@@ -13,3 +13,7 @@ or
 ```console
 npm i dev-unique-id --save
 ```
+
+### Use Example
+
+on the way 🐸
