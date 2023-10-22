@@ -1,3 +1,5 @@
+import { TUniqueID } from "./types";
+
 const ALL_CHARSET = "abcdefghijklmnopqrstuvwxyx";
 const ALL_ALPHABET = "1234567890";
 const TIME_STAMP = new Date().getTime().toString(36);
@@ -7,7 +9,7 @@ const TIME_STAMP = new Date().getTime().toString(36);
  * @returns {string} it will return a unique ID based on your length
  * @description Default length is (36)
  */
-function uniqueID(length: number): string {
+const uniqueID = ({ length }: TUniqueID): string => {
   const strings = TIME_STAMP + ALL_ALPHABET + ALL_CHARSET;
   let result: string = "";
 
@@ -25,6 +27,6 @@ function uniqueID(length: number): string {
     }
   }
   return result;
-}
+};
 
 export default uniqueID;
