@@ -1,6 +1,6 @@
 {
   "name": "dev-unique-id",
-  "version": "0.0.4",
+  "version": "0.0.6",
   "description": "Dev Unique ID Generator",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
