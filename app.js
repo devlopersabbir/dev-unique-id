@@ -28,3 +28,5 @@ function uniqueID(length) {
   }
   return result;
 }
+
+exports.uniqueID = uniqueID;
