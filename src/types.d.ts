@@ -1,3 +1,3 @@
 export type TUniqueID = {
-  length: number;
+	length: number;
 };

@@ -1,6 +1,6 @@
 {
   "name": "dev-unique-id",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Dev Unique ID Generator",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -38,12 +38,14 @@
   "license": "MIT",
   "scripts": {
     "build": "tsc",
+    "test": "xo --fix",
     "prepare": "npm run build"
   },
   "devDependencies": {
     "@types/node": "^20.8.7",
     "node": "^21.0.0",
     "ts-node": "^10.9.1",
-    "typescript": "^5.2.2"
+    "typescript": "^5.2.2",
+    "xo": "^0.56.0"
   }
 }
