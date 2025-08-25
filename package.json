@@ -19,7 +19,7 @@
   "repository": {
     "directory": "Dev Unique ID",
     "type": "git",
-    "url": "https://github.com/devlopersabbir/dev-unique-id"
+    "url": "git+https://github.com/devlopersabbir/dev-unique-id.git"
   },
   "readme": "https://github.com/devlopersabbir/dev-unique-id/README.md",
   "markdown": "standard",
