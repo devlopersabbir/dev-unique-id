@@ -1,10 +1,10 @@
-import { UniqueIdOptions } from "./@types";
+import {type UniqueIdOptions} from './@types';
 import {
-  ALL_ALPHABET,
-  ALL_CHARSET,
-  defaultValue,
-  TIME_STAMP,
-} from "./constants";
+	ALL_ALPHABET,
+	ALL_CHARSET,
+	defaultValue,
+	TIME_STAMP,
+} from './constants';
 
 /**
  * Generates a random unique ID string based on the provided options.
@@ -44,50 +44,50 @@ import {
  * // => "YZXZXZXYXY"
  */
 const uniqueID = (options: UniqueIdOptions = {}): string => {
-  const {
-    length = defaultValue.length!,
-    alphabet = defaultValue.alphabet,
-    charset = defaultValue.charset,
-    timestamp = defaultValue.timestamp,
-    custom = defaultValue.custom,
-  } = options;
+	const {
+		length = defaultValue.length!,
+		alphabet = defaultValue.alphabet,
+		charset = defaultValue.charset,
+		timestamp = defaultValue.timestamp,
+		custom = defaultValue.custom,
+	} = options;
 
-  if (length < 1) {
-    throw new Error("Length must be at least 1");
-  }
+	if (length < 1) {
+		throw new Error('Length must be at least 1');
+	}
 
-  let characters = "";
+	let characters = '';
 
-  if (timestamp) {
-    characters += TIME_STAMP;
-  }
+	if (timestamp) {
+		characters += TIME_STAMP;
+	}
 
-  if (alphabet) {
-    characters += ALL_ALPHABET;
-  }
+	if (alphabet) {
+		characters += ALL_ALPHABET;
+	}
 
-  if (charset) {
-    characters += ALL_CHARSET;
-  }
+	if (charset) {
+		characters += ALL_CHARSET;
+	}
 
-  if (custom && custom.length > 0) {
-    characters += custom.join("");
-  }
+	if (custom && custom.length > 0) {
+		characters += custom.join('');
+	}
 
-  if (characters.length === 0) {
-    throw new Error(
-      "At least one character source must be enabled or provided."
-    );
-  }
+	if (characters.length === 0) {
+		throw new Error(
+			'At least one character source must be enabled or provided.',
+		);
+	}
 
-  let result = "";
+	let result = '';
 
-  for (let i = 0; i < length; i++) {
-    const randomIndex = Math.floor(Math.random() * characters.length);
-    result += characters.charAt(randomIndex);
-  }
+	for (let i = 0; i < length; i++) {
+		const randomIndex = Math.floor(Math.random() * characters.length);
+		result += characters.charAt(randomIndex);
+	}
 
-  return result;
+	return result;
 };
 
 export default uniqueID;

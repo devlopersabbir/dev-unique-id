@@ -1,10 +1,11 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "module": "CommonJS",
+    "target": "esnext",
+    "module": "nodenext",
     "declaration": true,
     "outDir": "./lib",
-    "strict": true
+    "strict": true,
+    "moduleResolution": "nodenext"
   },
   "include": ["src"],
   "exclude": ["node_modules", "**/__tests__/*"]
