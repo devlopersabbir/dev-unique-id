@@ -1,6 +1,6 @@
 {
   "name": "dev-unique-id",
-  "version": "0.0.4",
+  "version": "0.1.1",
   "description": "Dev Unique ID Generator",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -19,8 +19,9 @@
   "repository": {
     "directory": "Dev Unique ID",
     "type": "git",
-    "url": "https://devlopersabbir.github.io/dev-unique-id"
+    "url": "https://github.com/devlopersabbir/dev-unique-id"
   },
+  "readme": "https://github.com/devlopersabbir/dev-unique-id/README.md",
   "markdown": "standard",
   "keywords": [
     "dev-unique-id",
@@ -38,12 +39,14 @@
   "license": "MIT",
   "scripts": {
     "build": "tsc",
+    "test": "xo --fix",
     "prepare": "npm run build"
   },
   "devDependencies": {
     "@types/node": "^20.8.7",
     "node": "^21.0.0",
     "ts-node": "^10.9.1",
-    "typescript": "^5.2.2"
+    "typescript": "^5.2.2",
+    "xo": "^0.56.0"
   }
 }
