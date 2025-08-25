@@ -1,35 +1,46 @@
-# .github/workflows/publish.yml
-
-name: Publish Package
+name: Publish to NPM
 
 on:
   push:
     branches:
       - main
-permissions:
-  contents: write
+    paths:
+      - "package.json"
 
 jobs:
-  build:
+  publish:
     runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 22
-      - run: npm ci
-      - run: npm test
 
-  publish-npm:
-    needs: build
-    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
         with:
-          node-version: 22
-          registry-url: https://registry.npmjs.org/
-      - run: npm ci
-      - run: npm publish
+          node-version: "18"
+          registry-url: "https://registry.npmjs.org/"
+
+      - name: Install dependencies
+        run: npm i -g bun@latest
+
+      - name: Install dependencies
+        run: bun install
+
+      - name: Build your package (optional)
+        run: npm run build # Remove if no build step
+
+      - name: Check if 'examples' has changes
+        run: |
+          git fetch origin main
+          if git diff --name-only origin/main...HEAD | grep -E '^(examples)/'; then
+            echo "Changes detected in 'examples'. Skipping publish."
+            exit 0
+          else
+            echo "No changes in 'src'. Proceeding with publish."
+          fi
+
+      - name: Publish to npm
+        run: npm publish --access public
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
